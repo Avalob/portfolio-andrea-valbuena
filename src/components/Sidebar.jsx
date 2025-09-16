@@ -73,7 +73,7 @@ export default function Sidebar({ section, setSection, onToggleSidebar }) {
       </ul>
       {/* Botón para descargar el CV */}
       <div style={{ padding: '16px', textAlign: 'start', width: '100%' }}>
-        <a href="/Curriculum-Andrea-Valbuena.pdf" download className="btn" >
+        <a href="./Curriculum-Andrea-Valbuena.pdf" download className="btn" >
           Descargar CV
         </a>
       </div>

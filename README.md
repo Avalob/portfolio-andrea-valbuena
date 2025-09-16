@@ -78,7 +78,6 @@ Si quieres desplegar tu propia versión en GitHub Pages:
    npm run deploy
    ```
 
-<<<<<<< HEAD
 4. Tu sitio estará disponible en:  
    [https://avalob.github.io/portfolio-andrea-valbuena/](https://avalob.github.io/portfolio-andrea-valbuena/)
 
@@ -95,21 +94,6 @@ Si quieres desplegar tu propia versión en GitHub Pages:
 
 ---
 
-=======
----
-
-## 🧑‍💻 Tecnologías utilizadas
-
-- React ⚛️
-- CSS3 🎨
-- React Icons 💎
-- GitHub Pages 🌍
-- JavaScript ES6+
-- Responsive Design 📱
-
----
-
->>>>>>> b78dbcc869fbdc5254767b1e187f6934df0a2e0c
 ## 🧰 ¿Qué he usado?
 
 - **React** para la estructura y componentes.
@@ -125,6 +109,46 @@ Si quieres desplegar tu propia versión en GitHub Pages:
 ## 🌐 Proyecto en vivo
 
 [![Ver Portfolio Online](https://img.shields.io/badge/Ver%20Portfolio%20Online-avalob.github.io-green?style=for-the-badge&logo=github)](https://avalob.github.io/portfolio-andrea-valbuena/)
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+src/
+  components/
+    Contact.jsx
+    Home.jsx
+    Profile.jsx
+    Projects.jsx
+    Sidebar.jsx
+    Skills.jsx
+    SocialFeed.jsx
+    Splash.jsx
+  App.js
+  App.css
+  index.js
+  index.css
+  ...
+```
+
+---
+
+## ✨ Funcionalidades
+
+- Página de inicio con presentación personal.
+- Sección de proyectos destacados.
+- Listado de habilidades técnicas.
+- Formulario de contacto funcional vía EmailJS.
+- Responsive design.
+
+---
+
+## 📬 Contacto
+
+¿Tienes preguntas o quieres contactarme?  
+Puedes usar el formulario de contacto del sitio o escribirme a:  
+**andrea.valbuena@email.com**
 
 ---
 

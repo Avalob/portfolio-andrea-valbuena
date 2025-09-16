@@ -10,7 +10,7 @@ export default function Profile() {
     <div className="profile-wrapper">
       <div className="profile">
         {/* Avatar del usuario */}
-        <img src="/avatar.png" alt="Avatar" className="profile-avatar" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+        <img src="./avatar.png" alt="Avatar" className="profile-avatar" style={{ objectFit: 'cover', objectPosition: 'center' }} />
         {/* Información del usuario */}
         <div className="profile-info">
           <h2 className="profile-name">Andrea Valbuena</h2>
