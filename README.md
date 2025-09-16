@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# 👩‍💻 Portfolio de Andrea Valbuena
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Bienvenido/a a mi portfolio personal! 🚀  
+Aquí podrás conocer mis proyectos, habilidades y formas de contacto.  
+Este sitio está desarrollado en **React** y diseñado para mostrar mi trabajo de manera creativa y profesional.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🖼️ Vista previa
 
-### `npm start`
+![Vista previa del portfolio](./preview.png) <!-- Puedes agregar una imagen de tu portfolio aquí -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Características
 
-### `npm test`
+- 📁 **Proyectos:** Descubre algunos de mis trabajos destacados.
+- 🛠️ **Skills:** Tecnologías y herramientas que manejo.
+- 📬 **Contacto:** Formulario para enviarme un mensaje.
+- 🔔 **Notificaciones:** ¡Entérate de mis últimas novedades!
+- 📱 **Responsive:** Adaptado para dispositivos móviles y escritorio.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Instalación y uso local
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clona el repositorio:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/Avalob/portfolio-andrea-valbuena.git
+   cd portfolio-andrea-valbuena
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Instala las dependencias:**
 
-### `npm run eject`
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Inicia la aplicación:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador favorito. 🌐
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Despliegue en GitHub Pages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Puedes ver el proyecto en vivo aquí:  
+[🔗 Portfolio en GitHub Pages](https://avalob.github.io/portfolio-andrea-valbuena/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Si quieres desplegar tu propia versión en GitHub Pages:
 
-### Code Splitting
+1. Instala el paquete `gh-pages`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm install --save gh-pages
+   ```
 
-### Analyzing the Bundle Size
+2. Agrega las siguientes líneas en tu `package.json`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```json
+   "homepage": "https://<tu-usuario>.github.io/portfolio-andrea-valbuena",
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
 
-### Making a Progressive Web App
+   Cambia `<tu-usuario>` por tu usuario de GitHub.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Despliega con:
 
-### Advanced Configuration
+   ```bash
+   npm run deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Tu sitio estará disponible en:  
+   [https://avalob.github.io/portfolio-andrea-valbuena/](https://avalob.github.io/portfolio-andrea-valbuena/)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🧑‍💻 Tecnologías utilizadas
 
-### `npm run build` fails to minify
+- React ⚛️
+- CSS3 🎨
+- React Icons 💎
+- GitHub Pages 🌍
+- JavaScript ES6+
+- Responsive Design 📱
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🧰 ¿Qué he usado?
+
+- **React** para la estructura y componentes.
+- **React Icons** para los iconos sociales y visuales.
+- **CSS personalizado** para el diseño y la responsividad.
+- **GitHub Pages** para el despliegue gratuito y sencillo.
+- **Hooks de React** (`useState`) para la gestión de estado.
+- **Vite** o **Create React App** (según configuración inicial) para el entorno de desarrollo.
+- **Diseño modular**: componentes separados para Home, Projects, Skills, Contact, Sidebar, Splash, etc.
+
+---
+
+## 🌐 Proyecto en vivo
+
+[![Ver Portfolio Online](https://img.shields.io/badge/Ver%20Portfolio%20Online-avalob.github.io-green?style=for-the-badge&logo=github)](https://avalob.github.io/portfolio-andrea-valbuena/)
+
+---
+
+¡Gracias por visitar mi portfolio! ✨
