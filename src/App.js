@@ -13,7 +13,7 @@ function AppHeader({ onNotificationClick, onToggleSidebar }) {
     <header className="Header">
       <div className="Header-index">
         <button className="toggle-sidebar" onClick={onToggleSidebar} aria-label="Abrir/cerrar menú de navegación">☰</button>
-        <img src="./logo1.png" alt="Logo" className="Header-logo" />
+        <img src={process.env.PUBLIC_URL + '/logo1.png'} alt="Logo" className="Header-logo" />
         <span className="Header-title">Mi Portfolio</span>
         <div className="Header-socials">
           <a href="https://github.com/Avalob" target="_blank" rel="noopener noreferrer" className="icon-link">
