@@ -8,7 +8,7 @@ import { GrCertificate } from "react-icons/gr";
 const user = {
   name: 'Andrea Valbuena',
   username: '@avalob',
-  avatar: '/avatar.png',
+  avatar: './avatar.png',
 };
 
 // Mapeo de iconos por tipo de post
