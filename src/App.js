@@ -32,7 +32,9 @@ function AppHeader({ onNotificationClick, onToggleSidebar }) {
         <button className="icon-button" title="Notificaciones" onClick={onNotificationClick}>
           <BiBell className="icon-notifications" />
         </button>
-  
+        <a href="#projects" className="btn">Proyectos</a>
+        <a href="#skills" className="btn">Habilidades</a>
+        <a href="#contact" className="btn">Contacto</a>
       </div>
     </header>
   );
