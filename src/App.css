@@ -1,0 +1,1806 @@
+/* ============================= */
+/* Variables globales */
+/* ============================= */
+:root {
+  --color-bg-canvas: #0d1117;
+  --color-bg-default: #161b22;
+  --color-bg-subtle: #21262d;
+  --color-border-default:  #6d6d6d;
+  --color-border-muted: #21262d;
+  --color-fg-default: #dfe8f1;
+  --color-fg-muted: #8b949e;
+  --color-label-success-bg: #FF007F;
+  --color-label-success-fg: #030303;
+  --color-label-primary-bg: #22d3ee;
+  --color-label-primary-fg: #fff;
+  --color-label-secondary-bg: #6e7681;
+  --color-label-secondary-fg: #fff;
+  --color-btn-bg: #21262d;
+  --color-btn-fg: #c9d1d9;
+  --color-btn-border: #30363d;
+  --color-btn-hover-bg: #30363d;
+  --color-btn-primary-bg: #ff53a9;
+  --color-btn-primary-fg: #fff;
+  --color-btn-primary-hover-bg: #FF007F;
+  --color-shadow: 0 1px 0 #21262d;
+  --font-family-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-family-monospace: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+/* ============================= */
+/* Ajustes generales */
+/* ============================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--color-bg-canvas) !important;
+  color: var(--color-fg-default) !important;
+  font-family: var(--font-family-default);
+}
+
+code, pre {
+  font-family: var(--font-family-monospace);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ============================= */
+/* Botones */
+/* ============================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.35s cubic-bezier(0.4, 0.2, 0.2, 1);
+  color: var(--color-fg-default);
+  font-size: 14px;
+  width: auto;
+  font-family: var(--font-family-default);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--color-bg-default);
+  border-color: var(--color-border-muted);
+  transform: scale(1.05);
+}
+
+.btn-rosa {
+  background-color: var(--color-btn-primary-hover-bg);
+  border: 1px solid var(--color-btn-primary-hover-bg);
+  color: var(--color-fg-default);
+}
+
+.btn-rosa:hover {
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-muted);
+}
+
+.btn-azul {
+  background-color: var(--color-label-primary-bg);
+  border: 1px solid var(--color-label-primary-bg);
+  color: var(--color-bg-default);
+}
+
+.btn-azul:hover {
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-default);
+  border-color: var(--color-label-primary-bg);
+}
+
+.btn-borde-azul {
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-label-primary-bg);
+  color: var(--color-fg-default);
+}
+
+.btn-borde-azul:hover {
+  background-color: var(--color-label-primary-bg);
+  color: var(--color-fg-default);
+}
+
+.btn-gris {
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-fg-default);
+}
+
+.btn-gris:hover {
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-muted);
+}
+
+.btn-borde-rosa {
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-btn-primary-hover-bg);
+  color: var(--color-fg-default);
+}
+
+.btn-borde-rosa:hover {
+  background-color: var(--color-btn-primary-hover-bg);
+  color: var(--color-fg-muted);
+}
+
+.btn-danger {
+  background-color: #da3633;
+  color: #ffffff;
+  border: 1px solid #da3633;
+}
+
+.btn-danger:hover {
+  background-color: #b62324;
+}
+
+.btn-warning {
+  background-color: #f0b400;
+  color: #ffffff;
+  border: 1px solid #f0b400;
+}
+
+.btn-warning:hover {
+  background-color: #c69000;
+}
+
+.btn-success {
+  background-color: #2ea043;
+  color: #ffffff;
+  border: 1px solid #2ea043;
+}
+
+.btn-success:hover {
+  background-color: #238636;
+}
+
+.btn-disabled {
+  background-color: var(--color-border-muted);
+  color: var(--color-fg-muted);
+  cursor: not-allowed;
+  border: 1px solid var(--color-border-muted);
+}
+
+.btn-label {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 20px;
+}
+
+.btn-label:hover {
+  background-color: var(--color-bg-default);
+}
+
+.btn .icon-space {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ============================= */
+/* Iconos y botones de acción */
+/* ============================= */
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  transition: background-color 0.2s, border-color 0.2s;
+  color: var(--color-fg-default);
+}
+
+.icon-button:hover {
+  background-color: var(--color-bg-default);
+  border-color: var(--color-border-muted);
+}
+
+/* ============================= */
+/* Estilo para el perfil */
+/* ============================= */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 30px;
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--color-border-default);
+}
+
+.profile-info {
+  text-align: center;
+}
+
+/* ============================= */
+/* Estilo para las cajas */
+/* ============================= */
+.box {
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* ============================= */
+/* Estilo para SocialFeed */
+/* ============================= */
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+
+
+/* ============================= */
+/* Animaciones */
+/* ============================= */
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ============================= */
+/* Animaciones de inicio ajustadas */
+/* ============================= */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-360deg) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ============================= */
+/* Barra de progreso ajustada */
+/* ============================= */
+.loading-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-bg-subtle); /* Ajusto el color de fondo a gris de tus colores */
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.loading-progress {
+  height: 100%;
+  background-color: var(  --color-btn-fg);
+}
+
+/* ============================= */
+/* Header ajustado */
+/* ============================= */
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background-color: var(--color-bg-default);
+  border-bottom: 1px solid var(--color-border-default);
+  box-shadow: var(--color-shadow);
+  z-index: 1000;
+}
+
+.Header-index {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Header-logo {
+  width: 80px;
+  height: auto;
+}
+
+.Header-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--color-fg-default);
+}
+
+/* ============================= */
+/* Barra de búsqueda ajustada */
+/* ============================= */
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  padding: 6px 12px; /* Aumento el padding para hacerla más alta */
+}
+
+.header-search svg {
+  width: 20px; /* Aumento el tamaño de la lupa */
+  height: 20px;
+  fill: var(--color-fg-muted); /* Ajusto el color de la lupa */
+  border: none; /* Elimino el borde */
+}
+
+.header-search-input {
+  width: 300px; /* Mantengo el ancho aumentado */
+  border: none;
+  background: transparent;
+  color: var(--color-fg-default);
+  font-size: 14px;
+}
+
+.header-search-input:focus {
+  outline: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.header-action-btn:hover {
+  background-color: var(--color-bg-subtle);
+}
+
+.avatar {
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-default);
+}
+
+/* ============================= */
+/* Botones estilo GitHub ajustados */
+/* ============================= */
+
+
+/* ============================= */
+/* Icono de notificaciones ajustado */
+/* ============================= */
+.icon-notifications {
+  width: 20px; /* Aumento el tamaño del icono */
+  height: 20px;
+}
+
+/* ============================= */
+/* Estilo para iconos sociales */
+/* ============================= */
+.Header-socials {
+  display: flex;
+  align-items: center; /* Alineación vertical al centro */
+  gap: 12px; /* Espaciado entre iconos */
+  margin-left: 16px; /* Separación del título */
+}
+
+.icon-link {
+  color: var(--color-fg-muted); /* Color inicial */
+  font-size: 20px; /* Tamaño de los iconos */
+  transition: color 0.2s ease;
+}
+
+.icon-link .icon-social {
+  font-size: 22px; /* Ajusto el tamaño del icono de Behance */
+}
+
+.icon-link .icon-social-BiLogoBehance {
+  font-size: 26px; /* Hago el icono de Behance un poco más grande */
+
+}
+
+.icon-link:hover {
+  color: var(--color-label-primary-bg); /* Color al pasar el cursor */
+}
+
+/* ============================= */
+/* Estilo para el panel de notificaciones */
+/* ============================= */
+.notification-panel {
+  position: absolute;
+  top: 70px; /* Ajusto la posición debajo del header */
+  right: 16px; /* Alineo al lado derecho */
+  width: 300px; /* Ancho del panel */
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Aseguro que esté encima de otros elementos */
+  overflow: hidden;
+}
+
+.notification-panel h3 {
+  margin: 0;
+  padding: 12px;
+  background-color: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border-default);
+  color: var(--color-fg-default);
+  font-size: 16px;
+}
+
+.notification-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notification-panel li {
+  padding: 12px;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.notification-panel li:last-child {
+  border-bottom: none;
+}
+
+.notification-panel a {
+  text-decoration: none;
+  color: var(--color-fg-default);
+  transition: color 0.2s;
+}
+
+.notification-panel a:hover {
+  color: var(--color-fg-muted);
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--color-fg-muted);
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: var(--color-fg-default);
+}
+
+.notification-message {
+  font-size: 14px;
+}
+
+/* ============================= */
+/* Estilo para la Sidebar */
+/* ============================= */
+.Sidebar {
+  width: 260px; /* Ancho de la barra lateral */
+  background-color: var(--color-bg-default);
+  border-right: 1px solid var(--color-border-default);
+  height: calc(100% - 80px); /* Resto la altura del header */
+  position: fixed;
+  top: 80px; /* Coloco la sidebar debajo del header */
+  left: 0; /* Sidebar visible por defecto */
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  z-index: 1000; /* Aseguro que esté encima de otros elementos */
+}
+
+.Sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Sidebar-item {
+  margin: 0;
+}
+
+.Sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  padding: 8px 16px;
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.Sidebar-link:hover {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg-default);
+}
+
+
+.Sidebar-link.active {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg-default);
+  font-weight: bold; /* Destaco la sección activa */
+}
+
+.Sidebar-link svg {
+  fill: var(--color-fg-muted);
+  transition: fill 0.2s;
+}
+
+.Sidebar-link:hover svg {
+  fill: var(--color-fg-default);
+}
+
+/* ============================= */
+/* Estilo para las nuevas secciones de la Sidebar */
+/* ============================= */
+.Sidebar-section {
+  margin-top: 24px;
+  padding: 0 16px;
+}
+
+.Sidebar-section-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-fg-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.Sidebar-projects,
+.Sidebar-languages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Sidebar-projects li,
+.Sidebar-languages li {
+  margin-bottom: 8px;
+}
+
+.Sidebar-projects a {
+  text-decoration: none;
+  color: var(--color-fg-default);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.Sidebar-projects a:hover {
+  color: var(--color-fg-muted);
+}
+
+/* ============================= */
+/* Header responsivo ajustado en una sola línea */
+/* ============================= */
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background-color: var(--color-bg-default);
+  border-bottom: 1px solid var(--color-border-default);
+  box-shadow: var(--color-shadow);
+  z-index: 1000;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .Header {
+    flex-direction: row; /* Mantengo los elementos en una sola línea */
+    height: 80px; /* Mantengo la altura estándar */
+    padding: 0 8px; /* Reduzco el padding para optimizar el espacio */
+   /* Aseguro que ocupe todo el ancho */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Header-title {
+    display: none; /* Oculto el título en pantallas pequeñas */
+  }
+
+  .header-search {
+    display: none; /* Oculto la barra de búsqueda en pantallas pequeñas */
+  }
+
+  .header-actions {
+    display: flex; /* Aseguro que los elementos sean visibles */
+    justify-content: flex-end; /* Alineo los elementos a la derecha */
+    gap: 8px; /* Ajusto el espaciado entre notificaciones y avatar */
+  }
+
+  .icon-button {
+    width: 36px; /* Ajusto el tamaño de los botones */
+    height: 36px;
+  }
+
+  .avatar {
+    width: 36px; /* Ajusto el tamaño del avatar */
+    height: 36px;
+    display: block; /* Aseguro que el avatar sea visible */
+  }
+}
+
+/* ============================= */
+/* Sidebar responsiva debajo del header */
+/* ============================= */
+.Sidebar {
+  width: 260px; /* Ancho de la barra lateral */
+  background-color: var(--color-bg-default);
+  border-right: 1px solid var(--color-border-default);
+  height: calc(100% - 80px); /* Resto la altura del header */
+  position: fixed;
+  top: 80px; /* Coloco la sidebar debajo del header */
+  left: 0; /* Sidebar visible por defecto */
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  z-index: 1000; /* Aseguro que esté encima de otros elementos */
+}
+
+@media (max-width: 768px) {
+  .Sidebar {
+    width: 200px; /* Sidebar más estrecha en móvil */
+    height: calc(100% - 80px); /* Mantengo el 100% del alto menos el header */
+  }
+}
+
+/* ============================= */
+/* Main-feed ajustado para ocupar el espacio restante */
+/* ============================= */
+.main-feed {
+  margin-top: 80px; /* Dejo espacio para el header */
+  margin-left: 260px; /* Dejo espacio para la sidebar */
+  padding: 16px; /* Agrego padding interno */
+  height: calc(100% - 80px); /* Ocupo el espacio restante debajo del header */
+  overflow-y: auto; /* Permito el scroll si el contenido es muy grande */
+}
+
+@media (max-width: 768px) {
+  .main-feed {
+    margin-left: 0;
+  }
+}
+
+/* ============================= */
+/* Estilo para SocialFeed como Instagram */
+/* ============================= */
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
+
+}
+
+
+/* ============================= */
+/* Estilo para las cajas de experiencia, educación y cursos */
+/* ============================= */
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+
+}
+
+.post-card {
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-btn-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.post-header-social {
+  display: flex;
+
+  padding: 12px;
+  background-color: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.post-avatar-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.post-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-name-social {
+  font-weight: bold;
+  color: var(--color-fg-default);
+}
+
+.post-username-social {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+}
+
+.post-content-social {
+  padding: 10px;
+  font-size: 14px; /* Ajustado a 14px */
+  color: var(--color-fg-default);
+  background-color: var(--color-bg-default);
+  border-left: 4px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-content-social ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.post-content-social li {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+
+.post-content-social span {
+  font-size: 14px; /* Ajustado a 14px */
+  color: var(--color-fg-muted);
+}
+
+.details {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: var(--color-bg-subtle);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: normal;
+}
+
+.post-actions-social {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-top: 1px solid var(--color-border-default);
+}
+
+.post-reaction-bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-fg-muted);
+}
+@media (max-width: 768px) {
+.post-content-social strong {
+  color: var(--color-label-primary-fg);
+  font-size: 12px; /* Cambiado a 16px */
+  font-weight: normal; /* Sin negrita */
+  padding: 0px 10px 0px 10px;
+
+}
+
+.post-card {
+  margin: 0; /* Eliminar margen */
+  width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+  box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+}
+
+.post-header-social {
+  display: flex;
+  
+  padding: 12px;
+  background-color: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.post-avatar-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.post-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-name-social {
+  font-weight: bold;
+  color: var(--color-fg-default);
+}
+
+.post-username-social {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+}
+
+.post-content-social {
+  font-size: 12px; /* Ajustado a 14px */
+  color: var(--color-fg-default);
+  line-height: 1,2;
+  background-color: var(--color-bg-default);
+  border-left: 4px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 5px;
+}
+
+.post-content-social ul {
+  padding-left: 0px;
+  margin:  0;
+}
+
+.post-content-social li {
+  margin-bottom: 8px;
+  font-weight: 500;
+
+}
+
+.post-content-social strong {
+  color: var(--color-label-primary-fg);
+  font-size: 12px; /* Cambiado a 16px */
+  font-weight: normal; /* Sin negrita */
+  text-align: center;
+}
+
+.post-content-social span {
+  font-size: 12px; /* Ajustado a 14px */
+  color: var(--color-fg-muted);
+  text-align: center;
+
+}
+
+.details {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: var(--color-bg-subtle);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-actions-social {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-top: 1px solid var(--color-border-default);
+}
+
+.post-reaction-bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-fg-muted);
+}
+ 
+}
+/* ============================= */
+/* Estilo para el perfil en caja */
+/* ============================= */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Espaciado entre la foto y los datos */
+  padding: 30px;
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--color-border-default);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+  margin: 0;
+}
+
+.profile-username {
+  font-size: 14px;
+  color: var(--color-fg-muted);
+  margin-top: -8px; /* Ajuste para acercar al nombre */
+}
+
+.profile-bio {
+  font-size: 14px;
+  color: var(--color-fg-muted);
+  margin: 8px 30px 8px 30px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.profile-stat {
+  text-align: center;
+}
+
+.profile-stat-number {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+}
+
+.profile-stat-label {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+}
+
+.profile-contact {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* ============================= */
+/* Ajuste para colocar los botones debajo de la información del perfil */
+/* ============================= */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px; /* Espaciado entre los elementos */
+}
+
+.profile-info {
+  text-align: center; /* Centra el texto */
+}
+
+.profile-contact {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* Espaciado entre los botones */
+  margin-top: 16px; /* Espaciado superior para separar los botones del texto */
+}
+
+/* ============================= */
+/* Estilo para los botones de contacto con colores anteriores */
+/* ============================= */
+.profile-contact {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn-azul {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-bg-default);
+  background-color: var(--color-label-primary-bg);
+  border: 1px solid var(--color-label-primary-bg);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-azul:hover {
+  background-color: var(--color-bg-default);
+    color: var(--color-fg-default);
+
+  border-color: var(--color-label-primary-bg);
+}
+.btn-borde-azul {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-label_primary-bg);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-borde-azul:hover {
+  background-color: var(--color-label-primary-bg);
+  color: var(--color-fg-default);
+}
+.btn-gris {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-gris:hover {
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-muted);
+}
+.btn-rosa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+  background-color: var(--color-btn-primary-hover-bg);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-rosa:hover {
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-muted);
+}
+
+.btn-borde-rosa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-btn-primary-hover-bg);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-borde-rosa:hover {
+  background-color: var(--color-btn-primary-hover-bg);
+  color: var(--color-fg-muted);
+}
+/* ============================= */
+/* Estilo para el encabezado del perfil */
+/* ============================= */
+.profile-wrapper {
+  margin-bottom: 16px;
+}
+
+.profile-header {
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header h1 {
+  font-size: 20px;
+  color: var(--color-fg-default);
+  margin-bottom: 8px;
+}
+
+.profile-header p {
+  font-size: 14px;
+  color: var(--color-fg-muted);
+}
+
+/* ============================= */
+/* Ajuste de espaciado para los títulos de las cajas */
+/* ============================= */
+.post-title-social {
+  padding: 12px 16px; /* Agrego padding interno para separar el título del borde */
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+/* ============================= */
+/* Estilo para el título de sección "Sobre mí" */
+/* ============================= */
+.section-title {
+  font-size: 14px; /* Tamaño pequeño acorde a tu estilo */
+  font-weight: bold;
+  color: var(--color-fg-muted);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* ============================= */
+/* Ajuste de tamaño uniforme para las cajas */
+/* ============================= */
+.box {
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+  /* Aseguro que todas las cajas ocupen el mismo ancho */
+  min-height: calc(100vh - 165px); /* Ajusto la altura mínima para ocupar el espacio restante */
+}
+
+/* ============================= */
+/* Estilo para los filtros y proyectos en Projects */
+/* ============================= */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn.active {
+  background-color: var(--color-bg-default); /* Mantengo el color original */
+  color: var(--color-fg-muted); /* Mantengo el color original del texto */
+  border: 1px solid var(--color-border-default); /* Mantengo el borde original */
+}
+
+.filter-btn:hover {
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-muted);
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.project-item {
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-info {
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-fg-default);
+}
+
+.project-tech {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+    text-decoration: none;
+  color: var(--color-label-primary-fg);
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+
+/* Ajustes en los botones de proyectos destacados */
+
+
+
+.project-link:hover {
+  color: var(--color-btn-fg);
+}
+
+/* ============================= */
+/* Estilo para la sección de habilidades (Skills) */
+/* ============================= */
+.skills-list {
+  display: flex !important;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan si no caben */
+  gap: 24px;       /* Espacio entre los items */
+  padding: 0;
+  justify-content: flex-start; /* Alinear items hacia la izquierda */
+  align-items: center;         /* Centrar verticalmente si tienen alturas distintas */
+}
+
+.skill-item {
+  max-width: 150px;
+  min-width:150px;
+  /* opcional: width: 150px; si quieres que todos tengan el mismo tamaño */
+}
+
+
+
+/* Ajuste para formato móvil */
+@media (max-width: 768px) {
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mostrar dos habilidades por fila */
+
+    display: grid;
+  gap: 8px !important;
+  padding: 0;
+  list-style: none;
+  }
+
+  .skill-item {
+    width: 100%; /* Asegurar que las habilidades ocupen el ancho disponible */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+  padding: 10px 0px !important;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Mantener la sombra */
+    
+  }
+
+  .skill-icon {
+    font-size: 20px; /* Reducir el tamaño del icono */
+    margin-bottom: 4px; /* Reducir el espaciado inferior */
+  }
+
+  .skill-name {
+    font-size: 12px; /* Reducir el tamaño del texto */
+  }
+
+  .skill-label {
+    font-size: 10px; /* Reducir el tamaño del texto de la etiqueta */
+  }
+}
+
+/* ============================= */
+/* Estilo para el chat estilo WhatsApp en Contact */
+/* ============================= */
+.contact {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.chat-message {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat-message.bot {
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-muted);
+  align-self: flex-start;
+}
+
+.chat-message.user {
+  background-color: var(--color-label-primary-bg);
+  color: var(--color-label-primary-fg);
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-input input,
+.chat-input textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  background-color: var(--color-bg-default);
+  color: var(--color-fg-default);
+}
+
+.chat-input button {
+  align-self: flex-end;
+  padding: 8px 16px;
+
+
+  cursor: pointer;
+
+}
+
+
+
+/* ============================= */
+/* Estilo para etiquetas con borde de botón y texto degradado */
+/* ============================= */
+.skill-label {
+  border: 1px solid var(--color-border-default); /* Borde igual al de los botones */
+  border-radius: 999px; /* Bordes completamente ovalados */
+  padding: 4px 12px; /* Ajusto el relleno */
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+
+  background-color: var(--color-bg-subtle); /* Fondo transparente */
+}
+
+
+
+
+/* ============================= */
+/* Sidebar plegable en formato móvil */
+/* ============================= */
+.Sidebar.collapsed {
+  width: 60px; /* Ancho reducido para la barra lateral plegada */
+}
+
+.Sidebar.collapsed .Sidebar-link {
+  justify-content: center; /* Centrar los íconos al plegar */
+  text-align: center;
+}
+
+.Sidebar.collapsed .Sidebar-link span {
+  display: none; /* Ocultar texto al plegar */
+}
+
+/* Transiciones para un efecto suave */
+.Sidebar {
+  transition: width 0.3s ease;
+}
+
+/* Botón para alternar el estado de la barra lateral */
+.toggle-sidebar {
+  position: static; /* Elimina la posición flotante */
+  margin-right: 8px; /* Añade espacio entre el botón y el logo */
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-fg);
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1100; /* Asegurar que esté encima de otros elementos */
+}
+
+.toggle-sidebar:hover {
+  background-color: var(--color-btn-hover-bg);
+}
+
+@media (min-width: 769px) {
+  .toggle-sidebar {
+    display: none; 
+  }
+
+  .Sidebar {
+    transform: none; 
+    position: fixed;
+    left: 0; /* Alineado al lado izquierdo */
+  }
+
+  .main-feed {
+    margin-left: 260px;
+  }
+}
+
+
+
+/* ============================= */
+/* Estilo para burbujas de reacción tipo Facebook */
+/* ============================= */
+.reaction-bubble-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 18px;
+  color: var(--color-fg-default);
+}
+
+.reaction-bubble-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-fg);
+}
+
+.reaction-bubbles {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  padding: 4px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Ajuste del color de la flecha desplegable */
+.btn-toggle-details {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff; /* Cambiado a blanco */
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.btn-toggle-details:hover {
+  color: var(--color-label-success-bg); /* Mantengo el color al pasar el cursor */
+}
+
+/* Estilos para la sección de comentarios en SocialFeed */
+.comments-section {
+  background: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  margin: 16px;
+  margin-top: 0;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.comment-label {
+  margin-bottom: 12px;
+  font-weight: bold;
+
+  font-size: 15px;
+}
+.comment-empty {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.comment {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.comment-user-label {
+  font-weight: bold;
+  color: var(--color-label-primary-bg);
+}
+.comment-text {
+  color: var(--color-fg-default);
+}
+.comment-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.comment-input {
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-subtle);
+  color: var(--color-fg-default);
+  padding: 8px;
+  font-size: 14px;
+}
+.send-comment {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+
+.chat-input{
+  margin-right: 16px;
+}
+
+/* Splash screen styles */
+.splash-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #181c22;
+}
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 40px 80px;
+  border-radius: 16px;
+  background: #23272f;
+  box-shadow: 0 4px 24px #0005;
+}
+.splash-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 16px;
+}
+.splash-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #fff;
+  text-align: center;
+}
+.loading-bar {
+  width: 100%;
+  height: 8px;
+  background: #222;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+.loading-progress {
+  height: 100%;
+  background: #4079FF;
+  border-radius: 4px;
+  transition: width 0.2s;
+}
+.splash-button {
+  width: 180px;
+  font-size: 16px;
+  .splash-button {
+  width: 180px;
+  font-size: 16px;
+  padding: 8px 0;
+  border-radius: 8px;
+}
+  border-radius: 8px;
+}
+
+/* ============================= */
+/* Media Queries */
+/* ============================= */
+@media (max-width: 768px) {
+  .splash-button {
+  width: auto;
+  font-size: 14px;
+
+}
+  .splash-title {
+  font-size: 16px;
+
+}
+  .splash-content {
+
+  padding: 30px 60px;
+
+  }
+  .comment-form{
+    flex-direction: column;
+  }
+  .project-list {
+    grid-template-columns: 1fr !important;
+    margin-top: 15px;
+  }
+
+  .post-card {
+    padding: 12px;
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .post-header-social {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .post-name-social,
+  .post-username-social {
+    font-size: 12px;
+  }
+
+  .post-title-social {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .details,
+  .comments-section {
+    font-size: 12px;
+    padding: 12px;
+  }
+
+  .comment-label {
+    font-size: 14px;
+  }
+
+  .feed {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  span {
+    flex-direction: column;
+  }
+
+  .post-content-social {
+    padding: 8px;
+    font-size: 12px;
+    line-height: 1.2;
+    background-color: var(--color-bg-default);
+    border-left: 4px solid var(--color-border-default);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .post-content-social ul {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .post-content-social li {
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .post-content-social strong {
+    color: var(--color-label-primary-fg);
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .post-content-social span {
+    margin-bottom: 5px;
+  }
+}
+.card-actions.post-actions-social {
+    align-items: end !important;
+}
