@@ -78,6 +78,7 @@ Si quieres desplegar tu propia versión en GitHub Pages:
    npm run deploy
    ```
 
+<<<<<<< HEAD
 4. Tu sitio estará disponible en:  
    [https://avalob.github.io/portfolio-andrea-valbuena/](https://avalob.github.io/portfolio-andrea-valbuena/)
 
@@ -94,6 +95,21 @@ Si quieres desplegar tu propia versión en GitHub Pages:
 
 ---
 
+=======
+---
+
+## 🧑‍💻 Tecnologías utilizadas
+
+- React ⚛️
+- CSS3 🎨
+- React Icons 💎
+- GitHub Pages 🌍
+- JavaScript ES6+
+- Responsive Design 📱
+
+---
+
+>>>>>>> b78dbcc869fbdc5254767b1e187f6934df0a2e0c
 ## 🧰 ¿Qué he usado?
 
 - **React** para la estructura y componentes.
